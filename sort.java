@@ -1,17 +1,12 @@
-import java.util.Arrays;   
-public class SortArrayExample1  
-{   
+import java.util.*;  
+import java.util.stream.*;  
+public class SortListExample1  
+{  
 public static void main(String[] args)   
-{   
-//defining an array of integer type   
-int [] array = new int [] {90, 23, 5, 109, 12, 22, 67, 34};  
-//invoking sort() method of the Arrays class  
-Arrays.sort(array);   
-System.out.println("Elements of array sorted in ascending order: ");  
-//prints array using the for loop  
-for (int i = 0; i < array.length; i++)   
-{       
-System.out.println(array[i]);   
-}   
+{  
+//returns a list view   
+List<String> slist = Arrays.asList("Tanu", "Kamal", "Suman", "Lucky", "Bunty", "Amit");  
+List<String> sortedList = slist.stream().sorted().collect(Collectors.toList());     
+sortedList.forEach(System.out::println);  
 }  
-} 
+}  
